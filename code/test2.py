@@ -12,7 +12,7 @@ player = pygame.Rect((300,250,50,50))
 #-----------------------placeholder---------------------------
 #-----------------------placeholder---------------------------
 
-
+speed = 5
 run = True
 while run:
     point = pygame.mouse.get_pos()
@@ -21,19 +21,22 @@ while run:
     screen.fill((0,0,0))
     pygame.draw.rect(screen,color,player)
 
+    player.clamp_ip(screen.get_rect())
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
 #-----------------------movement---------------------------
+
     key = pygame.key.get_pressed()
     if key[pygame.K_a] == True:
-        player.move_ip(-1,0)
+        player.move_ip(-speed,0)
     elif key[pygame.K_d] == True:
-        player.move_ip(1,0)
+        player.move_ip(speed,0)
     elif key[pygame.K_w] == True:
-        player.move_ip(0,-1)
+        player.move_ip(0,-speed)
     elif key[pygame.K_s] == True:
-        player.move_ip(0,1)
+        player.move_ip(0,speed)
     
     
     
