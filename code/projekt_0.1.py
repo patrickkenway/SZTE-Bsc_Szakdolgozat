@@ -56,11 +56,7 @@ while run:
             jumpCount -= 1
         else:
             jumpMax = 10
-            player.y -= jumpCount
-            if jumpCount > -jumpMax:
-                jumpCount -= 1
-            else:
-                jump = False 
+            is_jump = False 
     screen.fill((0,0,0))
     pygame.draw.rect(screen,player_color,player)
     #pygame.draw.circle(screen,(255,0,0),player.center,15)
