@@ -9,13 +9,13 @@ Teszteltem egy egérrel való collision-t, ha szükségem lesz rá használom ma
 Felkerestem több forrást, hogy tudjak ugrást implementálni. Valamelyest sikerült de kezdetleges mert nem gravitációval oldottam meg, csak egy felfele, majd lefele irányuló sebességgel.
 
 ## március 7.
-Elkezdtem egy [https://youtu.be/B6DrRN5z_uU?si=AX10vZk4MjNBMJtU](pygame kurzus alapján) egy platformert csinálni.
+Elkezdtem egy [pygame kurzus alapján](https://youtu.be/B6DrRN5z_uU?si=AX10vZk4MjNBMJtU) egy platformert csinálni.
 
 
--Background image-t beraktam
--Player rajzolása és updatelése
--Player mozgása
--Animációk implementálása
+- Background image-t beraktam
+- Player rajzolása és updatelése
+- Player mozgása
+- Animációk implementálása
 
 ## március 11.
 
