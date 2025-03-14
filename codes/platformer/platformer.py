@@ -162,7 +162,7 @@ class Object(pygame.sprite.Sprite):
         self.width = width
         self.height = height
         self.name = name
-        self.can_hit = False
+        self.can_hit = False #eldönti hogy az adott objekt tud-e ütni a playerre
     
     def draw(self,win, offset_x):
         win.blit(self.image,(self.rect.x-offset_x,self.rect.y))
@@ -173,6 +173,40 @@ class Block(Object):
         block = get_block(size)
         self.image.blit(block,(0,0))
         self.mask = pygame.mask.from_surface(self.image)
+
+def get_block(size):
+    path = join("assets", "Terrain", "Terrain.png")
+    image = pygame.image.load(path).convert_alpha()
+    surface = pygame.Surface((size,size),pygame.SRCALPHA, 32)
+    rect = pygame.Rect(96,128,size,size)
+    surface.blit(image,(0,0),rect)
+    return pygame.transform.scale2x(surface)
+
+class Spike(Object):
+    #DAMAGE = 10
+    def __init__(self,x,y,width,height):
+        super().__init__(x,y,width,height)
+        self.can_hit = True
+
+        self.spike = load_sprite_sheets("Traps","Spikes",width,height)
+        self.image = self.spike["Idle"][0]
+        self.mask = pygame.mask.from_surface(self.image)
+
+        self.animation_count = 0
+        self.animation_name = "Idle"
+
+    def loop(self):
+        sprites = self.spike[self.animation_name]
+        sprite_index = (self.animation_count // 
+                        self.ANIMATION_DELAY)%len(sprites)
+        self.image = sprites[sprite_index]
+        self.animation_count +=1
+        #update:
+        self.rect = self.image.get_rect(topleft = (self.rect.x, self.rect.y))
+        self.mask = pygame.mask.from_surface(self.image)
+
+        if self.animation_count // self.ANIMATION_DELAY > len(sprites):
+            self.animation_count = 0
 
 class Fire(Object):
     #DAMAGE = 5
@@ -194,6 +228,9 @@ class Fire(Object):
     def off(self):
         self.animation_name = "off"
         self.can_hit = False
+
+    def hit(self):
+        self.animation_name = "hit"
     
     def loop(self):
         sprites = self.fire[self.animation_name]
@@ -292,20 +329,24 @@ def main(window):
 
     player = Player(100,100,50,50)
     fire = Fire(100, HEGIHT-block_size-64,16,32)
+    spike1 = Spike(200,HEGIHT-block_size-32,16,32)
+    spike_sor1 = [Spike(i*32,HEGIHT-block_size-32,16,32)for i in range(-WIDTH*2//block_size, WIDTH*2//block_size)]
     fire.on()
     floor = [Block(i*block_size, HEGIHT-block_size, block_size) 
              for i in range(-WIDTH*2 // block_size, WIDTH * 3 // block_size)]
-    random_number = random.randint(2,5)
+    #random_number = random.randint(2,5)
     #megrajzolt objektek listaja
     objects = [*floor, 
                Block(0,HEGIHT - block_size * 2, block_size), 
-               Block(block_size*random_number,HEGIHT - block_size * random_number, block_size),
+               Block(block_size*4,HEGIHT - block_size * 2, block_size),
                fire,
-               Block(block_size*random_number,HEGIHT - block_size * random_number, block_size)]
+               Block(block_size*8,HEGIHT - block_size * 4, block_size),
+               spike1,
+               *spike_sor1]
     #Block(x poz, y poz, block meret)
     
     offset_x = 0
-    scroll_area_width = 200
+    scroll_area_width = 300
     #block = [Block(0,HEIGHT - block_size,block_size)]
 
     run = True
