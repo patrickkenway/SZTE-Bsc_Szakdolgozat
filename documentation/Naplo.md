@@ -34,3 +34,4 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
 # március 14.
 - hp és halált lekezeltem magamtól. tutorial nélkül. 
+- ***váltás?***elkezdtem gondolkodni azon, hogy a szimbólum felismerő rendszert hogy fogom megcsinálni, és kutatva nagyon kevés dolgot találtam arról, hogy pygame-ben hogy tudnám ezt megvalósítani, viszont unity-ben meg egyéb fórumokon találtam megoldásokat amik hasonlítanak az elképzelésemhez. Lehet váltok engine-t amiben jobban haladhatok.
