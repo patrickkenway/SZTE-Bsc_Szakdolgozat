@@ -52,6 +52,7 @@ def get_block(size):
 #player-----------------
 
 class Player(pygame.sprite.Sprite):
+    HP = 10
     COLOR =(255,0,0)
     GRAVITY = 1
     SPRITES = load_sprite_sheets("MainCharacters","NinjaFrog",32,32,True)
@@ -70,6 +71,7 @@ class Player(pygame.sprite.Sprite):
         self.jump_count = 0
         self.hit = False
         self.hit_count = 0
+        self.hp = self.HP
     
     def jump(self):
         self.y_vel = -self.GRAVITY*8
@@ -110,6 +112,8 @@ class Player(pygame.sprite.Sprite):
 
         self.fall_count += 1
         self.update_sprite()
+        #if self.hp <= 0:
+        #    pygame.quit()
 
     def landed(self):
         self.fall_count = 0
@@ -183,7 +187,7 @@ def get_block(size):
     return pygame.transform.scale2x(surface)
 
 class Spike(Object):
-    #DAMAGE = 10
+    DAMAGE = 10
     def __init__(self,x,y,width,height):
         super().__init__(x,y,width,height)
         self.can_hit = True
@@ -191,9 +195,10 @@ class Spike(Object):
         self.spike = load_sprite_sheets("Traps","Spikes",width,height)
         self.image = self.spike["Idle"][0]
         self.mask = pygame.mask.from_surface(self.image)
-
+        self.name = "spike"
         self.animation_count = 0
         self.animation_name = "Idle"
+        self.dmg = self.DAMAGE
 
     def loop(self):
         sprites = self.spike[self.animation_name]
@@ -208,52 +213,7 @@ class Spike(Object):
         if self.animation_count // self.ANIMATION_DELAY > len(sprites):
             self.animation_count = 0
 
-class Fire(Object):
-    #DAMAGE = 5
-    ANIMATION_DELAY = 3
 
-    def __init__(self,x,y,width,height):
-        super().__init__(x,y,width,height,"fire")
-        self.fire = load_sprite_sheets("Traps","Fire",width,height)
-        self.image = self.fire["off"][0]
-        self.can_hit=False
-        self.mask = pygame.mask.from_surface(self.image)
-        self.animation_count = 0
-        self.animation_name = "off"
-        self.hit = False
-        self.hit_count = 0
-
-    def on(self):
-        self.animation_name = "on"
-        self.can_hit=True
-
-    def off(self):
-        self.animation_name = "off"
-        self.can_hit = False
-
-    def make_hit(self):
-        self.animation_name = "hit"
-
-    
-    def loop(self,fps):
-        sprites = self.fire[self.animation_name]
-        sprite_index = (self.animation_count // 
-                        self.ANIMATION_DELAY)%len(sprites)
-        self.image = sprites[sprite_index]
-        self.animation_count +=1
-        #update:
-        self.rect = self.image.get_rect(topleft = (self.rect.x, self.rect.y))
-        self.mask = pygame.mask.from_surface(self.image)
-
-        if self.animation_count // self.ANIMATION_DELAY > len(sprites):
-            self.animation_count = 0
-        if self.hit:
-            self.hit_count+=1
-            self.make_hit()
-        if self.hit_count > fps * 0.6: #hit animacio hossza
-            self.hit = False
-            self.hit_count = 0
-            self.animation_name = "on"
 #-------object
 
 #background--------
@@ -326,39 +286,38 @@ def handle_move(player, objects):
     vertical_collide = handle_vertical_collision(player,objects,player.y_vel)
     to_check = [collide_left,collide_right, *vertical_collide]
     for obj in to_check:
-        #if obj and obj.name == "fire":
         if obj and obj.can_hit==True:   
             player.make_hit()
+            if obj.name == "spike":
+                player.hp-=obj.dmg
 
 def main(window):
     clock = pygame.time.Clock()
-    background,bg_image = get_background("Green.png")
+    background,bg_image = get_background("Blue.png")
 
     block_size = 96
 
     player = Player(100,100,50,50)
-    fire = Fire(100, HEGIHT-block_size-64,16,32)
     #spike1 = Spike(200,HEGIHT-block_size-32,16,32)
+    #spike sornal a for-ban a *3 csak a meret miatt kell azon kivul hanyadik saroktol hanyadik sarokig tartson
     spike_sor1 = [Spike(i*32,HEGIHT-block_size-32,16,32)for i in range(3*3, 10*3)]
-    fire.on()
     floor = [Block(i*block_size, HEGIHT-block_size, block_size) 
              for i in range(-WIDTH*2 // block_size, WIDTH * 3 // block_size)]
-    #random_number = random.randint(2,5)
     #megrajzolt objektek listaja
     objects = [*floor, 
                Block(block_size*2,HEGIHT - block_size * 2, block_size), 
                Block(block_size*6,HEGIHT - block_size * 4, block_size),
-               fire,
                Block(block_size*10,HEGIHT - block_size * 2, block_size),
                *spike_sor1]
     #Block(x poz, y poz, block meret)
     
     offset_x = 0
     scroll_area_width = 300
-    #block = [Block(0,HEIGHT - block_size,block_size)]
+    #block = [Block(0,HEIGHT - block_size,block_size)]a 
 
     run = True
-    while run:
+
+    while player.hp >0 and run != False: 
         clock.tick(FPS)
 
         for event in pygame.event.get():
@@ -369,18 +328,20 @@ def main(window):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE and player.jump_count < 2:
                     player.jump()        
-        
+            
         player.loop(FPS)
-        fire.loop(FPS)
         handle_move(player,objects)
         draw(window, background, bg_image, player,objects,offset_x)
 
         if((player.rect.right - offset_x >= WIDTH - scroll_area_width) and player.x_vel > 0) or (
             (player.rect.left - offset_x <= scroll_area_width) and player.x_vel < 0):
             offset_x += player.x_vel
-    
+    #halal eseten ezt dobja fel        
+    if player.hp <= 0:
+        print("meghaltal")
     pygame.quit()
     quit()
-
+    
+    
 if __name__ == "__main__":
     main(window)
