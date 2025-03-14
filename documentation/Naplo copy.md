@@ -1,14 +1,14 @@
 * 2025 
-** marcius 2. 
+* marcius 2. 
 Megnéztem egy alap pygame felépítést. Tetszik a technológia, ebben fogok dolgozni
 
-**március 6.
+* március 6.
 Teszteltem egy egérrel való collision-t, ha szükségem lesz rá használom majd, egyelőre nem gondolom hasznosnak.
 
-**március 7.
+* március 7.
 Felkerestem több forrást, hogy tudjak ugrást implementálni. Valamelyest sikerült de kezdetleges mert nem gravitációval oldottam meg, csak egy felfele, majd lefele irányuló sebességgel.
 
-** március 7.
+* március 7.
 Elkezdtem egy pygame kurzus alapján egy platformert csinálni.
 
 -Background image-t beraktam
@@ -16,18 +16,18 @@ Elkezdtem egy pygame kurzus alapján egy platformert csinálni.
 -Player mozgása
 -Animációk implementálása
 
-**március 11.
+* március 11.
 
 továbbra is a kurzus alapján haladtam és megcsináltam: 
 
--vertical collision
--gravitáció implementálása
+- vertical collision
+- gravitáció implementálása
 - ugrás implementálása
--double jump
--jump és fall Animációk
+- double jump
+- jump és fall Animációk
 
--tűz osztály és objektum létrehozása
+- tűz osztály és objektum létrehozása
 a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
-**március 12.
--túz ki és bekapcsolhatósága, 
+* március 12.
+- túz ki és bekapcsolhatósága, 
