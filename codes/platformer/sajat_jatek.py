@@ -52,7 +52,7 @@ def get_block(size):
 #player-----------------
 
 class Player(pygame.sprite.Sprite):
-    HP = 10
+    HP = 100
     COLOR =(255,0,0)
     GRAVITY = 1
     SPRITES = load_sprite_sheets("MainCharacters","NinjaFrog",32,32,True)
@@ -84,9 +84,11 @@ class Player(pygame.sprite.Sprite):
         self.rect.x+=dx
         self.rect.y+=dy
 
-    def make_hit(self):
+    def make_hit(self, object):
         self.hit = True
         self.hit_count = 0
+        self.hp -= object.dmg
+        print(self.hp)
 
     def move_left(self,vel):
         self.x_vel = -vel
@@ -287,9 +289,7 @@ def handle_move(player, objects):
     to_check = [collide_left,collide_right, *vertical_collide]
     for obj in to_check:
         if obj and obj.can_hit==True:   
-            player.make_hit()
-            if obj.name == "spike":
-                player.hp-=obj.dmg
+            player.make_hit(obj)
 
 def main(window):
     clock = pygame.time.Clock()
