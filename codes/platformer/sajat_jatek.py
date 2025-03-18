@@ -72,6 +72,7 @@ class Player(pygame.sprite.Sprite):
         self.hit = False
         self.hit_count = 0
         self.hp = self.HP
+        self.hurt = 0
     
     def jump(self):
         self.y_vel = -self.GRAVITY*8
@@ -86,9 +87,12 @@ class Player(pygame.sprite.Sprite):
 
     def make_hit(self, object):
         self.hit = True
+        self.hurt = object.dmg
+        if self.hit_count > 0:
+            self.hp-=self.hurt
+            print(self.hp)
         self.hit_count = 0
-        self.hp -= object.dmg
-        print(self.hp)
+        
 
     def move_left(self,vel):
         self.x_vel = -vel
