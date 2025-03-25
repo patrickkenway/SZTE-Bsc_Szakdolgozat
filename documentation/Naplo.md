@@ -30,7 +30,7 @@ továbbra is a kurzus alapján haladtam és megcsináltam:
 a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
 # március 12.
-- tűz ki és bekapcsolhatósága, 
+- tűz ki és bekapcsolhatósága
 
 # március 14.
 - hp és halált lekezeltem magamtól. tutorial nélkül. 
