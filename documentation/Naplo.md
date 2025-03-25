@@ -39,5 +39,5 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 # március 19.
 -Beszéltema a konzulens tanárommal és az ő tanácsára és saját meggyőződésemre átváltok Unity-re. Ezt fogom majd ezután tanulni.
 
-#március 25.
+# március 25.
 -Egyetemi elfoglaltságok miatt nem tudtam nagyon haladni, ma munka közben fogok megnézni egy [crash course-t a Unity-ről](https://www.youtube.com/watch?v=XtQMytORBmM&t=153s) és csinálok ez alapján egy platformert ezzel próbálom megtanulni ezt használni.
