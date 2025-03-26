@@ -43,3 +43,6 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 -Egyetemi elfoglaltságok miatt nem tudtam nagyon haladni, ma munka közben fogok megnézni egy [crash course-t a Unity-ről](https://www.youtube.com/watch?v=XtQMytORBmM&t=153s) és csinálok ez alapján egy platformert ezzel próbálom megtanulni ezt használni.
 
 -Befejeztem a tutorialt, és elkészült a flappy bird klónom. Máris többet értek ebből a technológiából mint a pygame-ből. Ezzel fogok haladni tovább. Következő alkalomkor az lesz a célom, hogy felhúzzak egy a saját játékomhoz hasonló másik demo-t.
+
+# március 26.
+-Megcsináltam a gitignore file-t a Unity-hez, így már tudom ide menteni a módosításaimat a /unity alatt
