@@ -46,3 +46,6 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
 # március 26.
 -Megcsináltam a gitignore file-t a Unity-hez, így már tudom ide menteni a módosításaimat a /unity alatt
+
+# április 10.
+-Elkezdtem mostmár ténylkeg a játék alapját megcsinálni. Felvittem egy playert a projektbe, egy két platformot és falat. Beraktam egy játékost követő kamerát a Unity beépített Cineamachine package használatával.
