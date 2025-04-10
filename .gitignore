@@ -5,7 +5,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
-Tilemap/
+#Tilemap/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
@@ -27,6 +27,9 @@ ExportedObj/
 *.pdb
 *.opendb
 *.VC.db
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
 
 # Unity3D generated meta files
 *.pidb.meta
