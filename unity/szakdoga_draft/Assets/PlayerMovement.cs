@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    bool isFacingRight = true;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
     float horizontalMovement;
@@ -17,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2 (0.5f, 0.05f);
     public LayerMask groundLayer;
+
+    [Header("WallCheck")]
+    public Transform wallCheckPos;
+    public Vector2 wallCheckSize = new Vector2(0.5f, 0.05f);
+    public LayerMask wallLayer;
 
     [Header("Gravity")]
     public float baseGravity = 2;
@@ -32,9 +39,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
         GroundCheck();
         Gravity();
+        Flip();
     }
 
     private void Gravity()
@@ -79,9 +87,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Flip() {
+        if (isFacingRight && horizontalMovement < 0 || !isFacingRight && horizontalMovement > 0) 
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1;
+            transform.localScale = ls;
+        }
+    }
+
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(groundCheckPos.position,groundCheckSize);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(wallCheckPos.position, wallCheckSize);
     }
 }
