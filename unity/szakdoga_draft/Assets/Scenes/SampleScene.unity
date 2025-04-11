@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 41060996}
   - component: {fileID: 41060995}
   - component: {fileID: 41060994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2437,10 +2437,11 @@ MonoBehaviour:
   wallCheckSize: {x: 0.05, y: 0.75}
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   baseGravity: 2
   maxFallSpeed: 18
   fallSpeedMultiplier: 2
+  wallSlideSpeed: 2
 --- !u!114 &1262850350
 MonoBehaviour:
   m_ObjectHideFlags: 0
