@@ -49,3 +49,6 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
 # április 10.
 -Elkezdtem mostmár ténylkeg a játék alapját megcsinálni. Felvittem egy playert a projektbe, egy két platformot és falat. Beraktam egy játékost követő kamerát a Unity beépített Cineamachine package használatával.
+
+# április 11.
+-Megcsináltam egy ugrós mechanikát, megfelelő gravitációs súlyozással. A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.youtube.com/watch?v=BwrzZI0_-qw&list=PLaaFfzxy_80EWnrTHyUkkIy6mJrhwGYN0) course alapján megyek és tetszik.
