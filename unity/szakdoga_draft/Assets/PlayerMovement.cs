@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
     bool isFacingRight = true;
 
     [Header("Movement")]
@@ -45,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Get the animator, which you attach to the GameObject you are intending to animate.
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,12 +58,16 @@ public class PlayerMovement : MonoBehaviour
         Gravity();
         ProcessWallSlide();
         ProcessWallJump();
-        Flip();
+        //Flip();
 
         if (!isWallJumping) {
             rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
             Flip();
         }
+        animator.SetFloat("yVelocity", rb.linearVelocityY);
+        animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
+        animator.SetBool("isWallSliding", isWallSliding);
+
     }
 
     private void Gravity()
@@ -116,12 +122,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpsRemaining--;
+                animator.SetTrigger("jump");
                 
             }
             else if (context.canceled)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
                 jumpsRemaining--;
+                animator.SetTrigger("jump");
             }
 
         }
@@ -129,6 +137,8 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed && wallJumpTimer > 0f) {
             isWallJumping = true;
             rb.linearVelocity = new Vector2(wallJumpDirection * wallJumpPower.x, wallJumpPower.y); //Jump away from wall
+            wallJumpTimer = 0;
+            animator.SetTrigger("jump");
 
             //Force flip
             if (transform.localScale.x != wallJumpDirection) {
