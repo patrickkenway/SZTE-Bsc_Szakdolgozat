@@ -54,10 +54,11 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 - Megcsináltam egy ugrós mechanikát, megfelelő gravitációs súlyozással.
 - Walljump
 - Wallslide
- A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.youtube.com/watch?v=BwrzZI0_-qw&list=PLaaFfzxy_80EWnrTHyUkkIy6mJrhwGYN0) course alapján megyek és tetszik ahogy ebbe a prefabric stílussal tudok haladni.
+
+A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.youtube.com/watch?v=BwrzZI0_-qw&list=PLaaFfzxy_80EWnrTHyUkkIy6mJrhwGYN0) course alapján megyek és tetszik ahogy ebbe a prefabric stílussal tudok haladni.
 
 ## április 15.
--Animációkat készítettem a mozgásokhoz
+- Animációkat készítettem a mozgásokhoz
 
 ## április 16.
 - Particle effektek 
