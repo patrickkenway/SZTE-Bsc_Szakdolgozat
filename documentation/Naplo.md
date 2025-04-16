@@ -64,3 +64,6 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 - fixált kamera határok.
 - példányosítható item interaface-ek
 - gem item ami egyelőre csak grafikával és animációval rendelkezik, illetve fel lehet venni
+- gem variációk melyeknek külön értékük van 
+- érték alapján progress bar feltöltés
+- UI (egyelőre csak progress bar)
