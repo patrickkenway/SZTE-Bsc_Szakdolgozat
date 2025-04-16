@@ -58,3 +58,6 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
 ## április 15.
 -Animációkat készítettem a mozgásokhoz
+
+## április 16.
+-Particle effektek és fixált kamera határok.
