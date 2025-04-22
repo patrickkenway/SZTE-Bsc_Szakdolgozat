@@ -68,3 +68,6 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - gem variációk melyeknek külön értékük van 
 - érték alapján progress bar feltöltés
 - UI (egyelőre csak progress bar)
+
+## április 22.
+- Pályák betöltése, scene loader gomb nyomásra ha tele van a progress bar
