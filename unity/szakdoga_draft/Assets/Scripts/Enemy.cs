@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float chaseSpeed = 2f;
     public float jumpForce = 2f;
     public LayerMask groundLayer;
@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
             //if gap
             RaycastHit2D gapAhead = Physics2D.Raycast(transform.position+new Vector3(direction,0,0),Vector2.down, 2f, groundLayer);
             //if platform
-            RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 3f, groundLayer);
+            RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, groundLayer);
 
             if(!groundInFront.collider && !gapAhead.collider)
             {
