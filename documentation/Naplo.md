@@ -71,3 +71,4 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 
 ## április 22.
 - Pályák betöltése, scene loader gomb nyomásra ha tele van a progress bar
+- Enemy hozzádaása ami követi a playert
