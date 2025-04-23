@@ -11,14 +11,15 @@ public class Enemy : MonoBehaviour
     private bool isGrounded;
     private bool shouldJump;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int damage = 1;
+
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //is grounded

@@ -73,3 +73,6 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - Pályák betöltése, scene loader gomb nyomásra ha tele van a progress bar
 - Enemy hozzádaása ami követi a playert
 - Spawn system ami követi a pályák elrendezését és esély alapján validált helyekre tesz dolgokat
+
+## április 23.
+- Az ellenfelekkel való collision esetén pirosan villogás, sebződés és ezt health baron megjelenítés
