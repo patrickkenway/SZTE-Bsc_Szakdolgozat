@@ -76,3 +76,5 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 
 ## április 23.
 - Az ellenfelekkel való collision esetén pirosan villogás, sebződés és ezt health baron megjelenítés
+- game over screen, működő lefagyás halál esetén
+- újrakezdő gomb, alaphelyzetbe álltítja a játék állapotát és kezdődik előlről a játékmenet.

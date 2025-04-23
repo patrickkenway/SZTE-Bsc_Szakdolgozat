@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,14 +9,16 @@ public class PlayerHealth : MonoBehaviour
     public HealthUI healthUI;
 
     private SpriteRenderer spriteRenderer;
+    public static event Action OnPlayerDied;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHealth = maxHealth;
-        healthUI.SetMaxHearts(maxHealth);
+        ResetHealth();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        GameController.OnReset += ResetHealth;
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +29,13 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(enemy.damage);
         }
     }
+
+    void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        healthUI.SetMaxHearts(maxHealth);
+    }
+
     private void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -36,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //player death
+            OnPlayerDied.Invoke();
         }
     }
 
