@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -13,11 +16,22 @@ public class Enemy : MonoBehaviour
 
     public int damage = 1;
 
-    
+    public int maxHealth = 3;
+    private int currentHealth;
+    private SpriteRenderer spriteRenderer;
+    private Color ogColor;
+
+    //Loot table
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
+        ogColor = spriteRenderer.color;
     }
 
     void Update()
@@ -63,6 +77,51 @@ public class Enemy : MonoBehaviour
 
             Vector2 jumpDirection = direction * jumpForce;
             rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
+        }
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        currentHealth -= dmg;
+        StartCoroutine(FlashWhite());
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private IEnumerator FlashWhite()
+    {
+        ogColor = spriteRenderer.color;
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = ogColor;
+    }
+
+    void Die()
+    {
+        //Go around lootable
+        //Spawn item
+        foreach(LootItem lootItem in lootTable)
+        {
+            if(Random.Range(0f,100f) <= lootItem.dropChance)
+            {
+                InstantiateLoot(lootItem.itemPrefab);
+                break;
+            }
+            
+        }
+
+        Destroy(gameObject);
+    }
+
+    void InstantiateLoot(GameObject loot)
+    {
+        if(loot)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+
+            droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 }

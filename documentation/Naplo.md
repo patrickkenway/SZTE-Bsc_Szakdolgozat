@@ -45,7 +45,7 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 - Befejeztem a tutorialt, és elkészült a flappy bird klónom. Máris többet értek ebből a technológiából mint a pygame-ből. Ezzel fogok haladni tovább. Következő alkalomkor az lesz a célom, hogy felhúzzak egy a saját játékomhoz hasonló másik demo-t.
 
 ## március 26.
--Megcsináltam a gitignore file-t a Unity-hez, így már tudom ide menteni a módosításaimat a /unity alatt
+- Megcsináltam a gitignore file-t a Unity-hez, így már tudom ide menteni a módosításaimat a /unity alatt
 
 ## április 10.
 - Elkezdtem mostmár ténylkeg a játék alapját megcsinálni. Felvittem egy playert a projektbe, egy két platformot és falat. Beraktam egy játékost követő kamerát a Unity beépített Cineamachine package használatával.
@@ -78,3 +78,9 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - Az ellenfelekkel való collision esetén pirosan villogás, sebződés és ezt health baron megjelenítés
 - game over screen, működő lefagyás halál esetén
 - újrakezdő gomb, alaphelyzetbe álltítja a játék állapotát és kezdődik előlről a játékmenet.
+
+## április 25.
+- Egér mutató irányába "bullet" lövése, mely ellenféllel való ütközéskor megsemmisül, megsebzi az ellenfelet, amely ha elfogy az életereje, megsemmisül.
+- A bulletnek is és az ellenfél életének is vannak állítható értékei melyet tetszőlegesen módosíthatok majd.
+
+- Implementáltam egy Loot table-t az ellenfélnek drop chance-ekkel ami halál esetén érvényesül és a %-os esélyek alapján dob egy Itemet. Ez a loot item.
