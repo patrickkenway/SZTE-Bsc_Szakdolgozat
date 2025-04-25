@@ -44,7 +44,7 @@ public class ObjectSpawner : MonoBehaviour
     }
 
     private void LevelChange()
-    {
+    { 
         tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
         GatherValidPositions();
         DestroyAllSpawnedObjects();

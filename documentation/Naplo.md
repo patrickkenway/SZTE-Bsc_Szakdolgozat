@@ -84,3 +84,5 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - A bulletnek is és az ellenfél életének is vannak állítható értékei melyet tetszőlegesen módosíthatok majd.
 
 - Implementáltam egy Loot table-t az ellenfélnek drop chance-ekkel ami halál esetén érvényesül és a %-os esélyek alapján dob egy Itemet. Ez a loot item.
+
+- Életerő tölrő itemek, dobhatják az ellenfelek halálkor, felvételkor tölti az életet.
