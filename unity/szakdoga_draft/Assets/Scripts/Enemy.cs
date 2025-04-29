@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color ogColor;
 
+    private static List<GameObject> spawnedLoot = new List<GameObject>();
     //Loot table
     [Header("Loot")]
     public List<LootItem> lootTable = new List<LootItem>();
@@ -33,6 +34,8 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         ogColor = spriteRenderer.color;
+        GameController.OnReset += KillItems;
+        GameController.LevelChange += KillItems;
     }
 
     void Update()
@@ -121,8 +124,16 @@ public class Enemy : MonoBehaviour
         if(loot)
         {
             GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+            spawnedLoot.Add(droppedLoot);
 
-            droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
+            droppedLoot.GetComponent<SpriteRenderer>().color = Color.blue;
         }
+    }
+    private void KillItems()
+    {
+           foreach(GameObject tmp in spawnedLoot)
+           {
+                Destroy(tmp);
+           }
     }
 }

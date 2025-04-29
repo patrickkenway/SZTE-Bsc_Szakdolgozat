@@ -86,3 +86,6 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - Implementáltam egy Loot table-t az ellenfélnek drop chance-ekkel ami halál esetén érvényesül és a %-os esélyek alapján dob egy Itemet. Ez a loot item.
 
 - Életerő tölrő itemek, dobhatják az ellenfelek halálkor, felvételkor tölti az életet.
+
+## április 29.
+- Javítottam azt, hogy az ellenfél által dobott itemek, nem semmisültek meg pálya váltáskor vagy a játék resetelésekor. (Ezt nem érintette a tutorial így magamtól kellett kitalálnom hogy kell)

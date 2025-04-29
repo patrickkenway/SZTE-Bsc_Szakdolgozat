@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     private int survivedLevelsCount;
 
     public static event Action OnReset;
+    public static event Action LevelChange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,6 +74,7 @@ public class GameController : MonoBehaviour
         progressAmount = 0;
         progressSlider.value = 0;
         if(wantSurvivedIncrease) survivedLevelsCount++;
+        LevelChange.Invoke();
     }
     void LoadNextLevel()
     {
