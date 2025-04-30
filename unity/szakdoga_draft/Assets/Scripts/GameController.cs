@@ -50,7 +50,10 @@ public class GameController : MonoBehaviour
         OnReset.Invoke();
         Time.timeScale = 1;
     }
-
+    public void doExitGame()
+    {
+        Application.Quit();
+    }
 
     void IncreaseProgressAmount(int amount) {
         progressAmount += amount;
