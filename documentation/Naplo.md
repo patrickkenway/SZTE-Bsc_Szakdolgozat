@@ -89,3 +89,7 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 
 ## április 29.
 - Javítottam azt, hogy az ellenfél által dobott itemek, nem semmisültek meg pálya váltáskor vagy a játék resetelésekor. (Ezt nem érintette a tutorial így magamtól kellett kitalálnom hogy kell)
+
+## szeptember 12.
+
+- Újra elkezdem a munkát a szakdolgozatommal, egyelőre elég nagy bajnak tűnik a kezdés, ugyanis a projekt betöltésekor az eddig kész dolgok több mint felét nem tudom visszafejteni.
