@@ -5,7 +5,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
-#Tilemap/
+[Tt]ilemap/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
