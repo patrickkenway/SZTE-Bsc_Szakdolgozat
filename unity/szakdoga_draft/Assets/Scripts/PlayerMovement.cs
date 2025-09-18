@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
     //Wall jumping
     bool isWallJumping;
     float wallJumpDirection;
-    float wallJumpTime = 0.5f;
+    float wallJumpTime = 0.2f;
     float wallJumpTimer;
-    public Vector2 wallJumpPower = new Vector2 (5f, 10f);
+    public Vector2 wallJumpPower = new Vector2 (4f, 9f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

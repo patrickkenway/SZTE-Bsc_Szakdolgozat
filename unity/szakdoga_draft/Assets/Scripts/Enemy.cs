@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private bool isGrounded;
     private bool shouldJump;
 
-    public int damage = 1;
+    public int damage = 2;
 
     public int maxHealth = 3;
     private int currentHealth;
