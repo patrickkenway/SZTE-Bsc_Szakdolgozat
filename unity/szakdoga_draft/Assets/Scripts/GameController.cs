@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
         progressAmount = 0;
         progressSlider.value = 0;
         if(wantSurvivedIncrease) survivedLevelsCount++;
-        //LevelChange.Invoke();
+        LevelChange.Invoke();
     }
     void LoadNextLevel()
     {
