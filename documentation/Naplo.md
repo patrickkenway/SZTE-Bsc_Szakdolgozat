@@ -93,3 +93,7 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 ## szeptember 12.
 
 - Újra elkezdem a munkát a szakdolgozatommal, egyelőre elég nagy bajnak tűnik a kezdés, ugyanis a projekt betöltésekor az eddig kész dolgok több mint felét nem tudom visszafejteni.
+
+## szeptember 18.
+
+- Megoldottam a nehézségeket, működik az eddig végzett munkám. Rajzoltam új pályát, refaktoráltam néhány dolgot. Az igazi munka ezután fog tudni jobban elkezdődni.
