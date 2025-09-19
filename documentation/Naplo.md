@@ -97,3 +97,7 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 ## szeptember 18.
 
 - Megoldottam a nehézségeket, működik az eddig végzett munkám. Rajzoltam új pályát, refaktoráltam néhány dolgot. Az igazi munka ezután fog tudni jobban elkezdődni.
+
+## szeptember 19.
+
+- Implementáltam a rajzoló és azt felsimerő rendszert a prebuild keretrendszert használva. Ezután funkciót akarok adni a saját rajzoknak, illetve egyáltalán létrehozni a saját adatbázist hozzá amiből kell majd felismerni az alakzatokat. Ezt használtam hozzá: https://github.com/gilbertdyer2/UnityDrawingRecognition . Szerencsére remekül működik, jelentősen megkönnyítette a munkámat.
