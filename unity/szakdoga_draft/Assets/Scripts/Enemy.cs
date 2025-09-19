@@ -7,15 +7,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Transform player;
-    public float chaseSpeed = 2f;
-    public float jumpForce = 2f;
+    public float chaseSpeed = 3f;
+    public float jumpForce = 3f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool shouldJump;
 
-    public int damage = 2;
+    public int damage = 3;
 
     public int maxHealth = 3;
     private int currentHealth;

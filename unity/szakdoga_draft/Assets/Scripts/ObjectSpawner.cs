@@ -12,9 +12,9 @@ public class ObjectSpawner : MonoBehaviour
     public Tilemap tilemap;
     public GameObject[] objectPrefabs; //0=smallgem 1=gem 2=biggem 3=enemy
     public float bigGemProbability = 0.2f;
-    public float smallGemProbability = 0.4f;
-    public float enemyProbability = 0.1f;
-    public int maxObjects = 5;
+    public float smallGemProbability = 0.3f;
+    public float enemyProbability = 0.4f;
+    public int maxObjects = 6;
     public float gemLifeTime = 10f; //only for gems
     public float spawnInterval = 0.5f;
 
