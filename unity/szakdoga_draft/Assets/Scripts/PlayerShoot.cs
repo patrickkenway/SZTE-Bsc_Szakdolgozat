@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
         } //Left click
     }
 
-    void Shoot()
+    public void Shoot()
     {
         //Get mouse pos
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

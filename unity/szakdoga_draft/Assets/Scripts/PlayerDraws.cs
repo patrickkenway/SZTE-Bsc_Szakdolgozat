@@ -4,6 +4,7 @@ public class PlayerDraws : MonoBehaviour
 {
     [SerializeField] private DrawingRecognition drawingRecognition; // reference to the DrawingRecognition script
     public Character match; // For storing the match
+    [SerializeField] private PlayerShoot playerShoot; // Reference to PlayerShoot script
     private void CheckDrawRecControls()
     {
 
@@ -13,7 +14,7 @@ public class PlayerDraws : MonoBehaviour
 
             if (match.name == "q")
             {
-                Shoot();
+                Shoot2();
             }
             drawingRecognition.ClearDrawing();
         }
@@ -25,10 +26,12 @@ public class PlayerDraws : MonoBehaviour
     void Update()
     {
         CheckDrawRecControls();
-    }   
-    void Shoot()
+    }
+    void Shoot2()
     {
+        playerShoot = GetComponent<PlayerShoot>();
         // Implement shooting logic here
         Debug.Log("Shoot action triggered!");
+        playerShoot.Shoot();
     }
 }
