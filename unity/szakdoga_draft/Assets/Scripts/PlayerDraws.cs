@@ -13,7 +13,7 @@ public class PlayerDraws : MonoBehaviour
         {
             match = drawingRecognition.GetMatch(); // Stores match & prints name to debug console 
 
-            if (match.name == "q")
+            if (match.name == "o")
             {
                 playerShoot = GetComponent<PlayerShoot>();
                 playerShoot.Shoot();
@@ -22,8 +22,6 @@ public class PlayerDraws : MonoBehaviour
         }
 
     }
-
-
     // Update is called once per frame
     void Update()
     {
