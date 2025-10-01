@@ -13,7 +13,7 @@ public class PlayerDraws : MonoBehaviour
         {
             match = drawingRecognition.GetMatch(); // Stores match & prints name to debug console 
 
-            if (match.name == "o")
+            if (match.name == "circle")
             {
                 playerShoot = GetComponent<PlayerShoot>();
                 playerShoot.Shoot();
