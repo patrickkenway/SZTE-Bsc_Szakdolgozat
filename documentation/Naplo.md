@@ -1,15 +1,18 @@
-# *2025* 
-## marcius 2. 
+# _2025_
+
+## marcius 2.
+
 Megnéztem egy alap pygame felépítést. Tetszik a technológia, ebben fogok dolgozni
 
 ## március 6.
+
 Teszteltem egy egérrel való collision-t, ha szükségem lesz rá használom majd, egyelőre nem gondolom hasznosnak.
 
 ## március 7.
+
 Felkerestem több forrást, hogy tudjak ugrást implementálni. Valamelyest sikerült de kezdetleges mert nem gravitációval oldottam meg, csak egy felfele, majd lefele irányuló sebességgel.
 
 Elkezdtem egy [pygame kurzus alapján](https://youtu.be/B6DrRN5z_uU?si=AX10vZk4MjNBMJtU) egy platformert csinálni.
-
 
 - Background image-t beraktam
 - Player rajzolása és updatelése
@@ -18,7 +21,7 @@ Elkezdtem egy [pygame kurzus alapján](https://youtu.be/B6DrRN5z_uU?si=AX10vZk4M
 
 ## március 11.
 
-továbbra is a kurzus alapján haladtam és megcsináltam: 
+továbbra is a kurzus alapján haladtam és megcsináltam:
 
 - vertical collision
 - gravitáció implementálása
@@ -27,30 +30,37 @@ továbbra is a kurzus alapján haladtam és megcsináltam:
 - jump és fall Animációk
 
 - tűz osztály és objektum létrehozása
-a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
+  a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 
 ## március 12.
+
 - tűz ki és bekapcsolhatósága
 
 ## március 14.
+
 - hp és halált lekezeltem magamtól. tutorial nélkül.
 - **váltás?**elkezdtem gondolkodni azon, hogy a szimbólum felismerő rendszert hogy fogom megcsinálni, és kutatva nagyon kevés dolgot találtam arról, hogy pygame-ben hogy tudnám ezt megvalósítani, viszont unity-ben meg egyéb fórumokon találtam megoldásokat amik hasonlítanak az elképzelésemhez. Lehet váltok engine-t amiben jobban haladhatok.
 
 ## március 19.
+
 - Beszéltema a konzulens tanárommal és az ő tanácsára és saját meggyőződésemre átváltok Unity-re. Ezt fogom majd ezután tanulni.
 
 ## március 25.
+
 - Egyetemi elfoglaltságok miatt nem tudtam nagyon haladni, ma munka közben fogok megnézni egy [crash course-t a Unity-ről](https://www.youtube.com/watch?v=XtQMytORBmM&t=153s) és csinálok ez alapján egy platformert ezzel próbálom megtanulni ezt használni.
 
 - Befejeztem a tutorialt, és elkészült a flappy bird klónom. Máris többet értek ebből a technológiából mint a pygame-ből. Ezzel fogok haladni tovább. Következő alkalomkor az lesz a célom, hogy felhúzzak egy a saját játékomhoz hasonló másik demo-t.
 
 ## március 26.
+
 - Megcsináltam a gitignore file-t a Unity-hez, így már tudom ide menteni a módosításaimat a /unity alatt
 
 ## április 10.
+
 - Elkezdtem mostmár ténylkeg a játék alapját megcsinálni. Felvittem egy playert a projektbe, egy két platformot és falat. Beraktam egy játékost követő kamerát a Unity beépített Cineamachine package használatával.
 
 ## április 11.
+
 - Megcsináltam egy ugrós mechanikát, megfelelő gravitációs súlyozással.
 - Walljump
 - Wallslide
@@ -58,28 +68,33 @@ a tüzet fogom valamilyen ellenfélre lecserélni valőszínűleg.
 A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.youtube.com/watch?v=BwrzZI0_-qw&list=PLaaFfzxy_80EWnrTHyUkkIy6mJrhwGYN0) course alapján megyek és tetszik ahogy ebbe a prefabric stílussal tudok haladni.
 
 ## április 15.
+
 - Animációkat készítettem a mozgásokhoz
 
 ## április 16.
-- Particle effektek 
+
+- Particle effektek
 - fixált kamera határok.
 - példányosítható item interaface-ek
 - gem item ami egyelőre csak grafikával és animációval rendelkezik, illetve fel lehet venni
-- gem variációk melyeknek külön értékük van 
+- gem variációk melyeknek külön értékük van
 - érték alapján progress bar feltöltés
 - UI (egyelőre csak progress bar)
 
 ## április 22.
+
 - Pályák betöltése, scene loader gomb nyomásra ha tele van a progress bar
 - Enemy hozzádaása ami követi a playert
 - Spawn system ami követi a pályák elrendezését és esély alapján validált helyekre tesz dolgokat
 
 ## április 23.
+
 - Az ellenfelekkel való collision esetén pirosan villogás, sebződés és ezt health baron megjelenítés
 - game over screen, működő lefagyás halál esetén
 - újrakezdő gomb, alaphelyzetbe álltítja a játék állapotát és kezdődik előlről a játékmenet.
 
 ## április 25.
+
 - Egér mutató irányába "bullet" lövése, mely ellenféllel való ütközéskor megsemmisül, megsebzi az ellenfelet, amely ha elfogy az életereje, megsemmisül.
 - A bulletnek is és az ellenfél életének is vannak állítható értékei melyet tetszőlegesen módosíthatok majd.
 
@@ -88,6 +103,7 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - Életerő tölrő itemek, dobhatják az ellenfelek halálkor, felvételkor tölti az életet.
 
 ## április 29.
+
 - Javítottam azt, hogy az ellenfél által dobott itemek, nem semmisültek meg pálya váltáskor vagy a játék resetelésekor. (Ezt nem érintette a tutorial így magamtól kellett kitalálnom hogy kell)
 
 ## szeptember 12.
@@ -101,3 +117,11 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 ## szeptember 19.
 
 - Implementáltam a rajzoló és azt felsimerő rendszert a prebuild keretrendszert használva. Ezután funkciót akarok adni a saját rajzoknak, illetve egyáltalán létrehozni a saját adatbázist hozzá amiből kell majd felismerni az alakzatokat. Ezt használtam hozzá: https://github.com/gilbertdyer2/UnityDrawingRecognition . Szerencsére remekül működik, jelentősen megkönnyítette a munkámat.
+
+## október 08.
+
+- Sajnos elfelejtettem update-elni az utóbbi időben ezt a naplót, röviden kerestem egy másik karektermodellt, tesztelgettem a rajfelismerő algoritmust, beállítottam a saját adatbázist amiből kell majd felismerni az alakzatokat. Funkciója is van egyelőre a kör alakzatnak, debug célból egy eddig kilőtt bullet prefab-et lő ki.
+
+- Elkezdtem egy másik pálya megrajzolását is.
+
+- Tervezem majd a dolgozatomba beleírni az összes metódust amit unity-n belül használok, mint pl. a collider-eket stb.
