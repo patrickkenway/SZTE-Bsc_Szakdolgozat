@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 158618517764191048}
   - component: {fileID: -9022912787994727685}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: FireRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 386844166813859994, guid: f441d3216b1983847800e0fbe9676a17, type: 3}
+  m_Sprite: {fileID: -8401470770713334247, guid: e2b8f8d61ff0049958583693c5683b48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,8 +124,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.18383503}
+  m_Radius: 1.7444229
 --- !u!50 &158618517764191048
 Rigidbody2D:
   serializedVersion: 5
