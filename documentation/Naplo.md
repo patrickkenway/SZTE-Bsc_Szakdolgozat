@@ -125,3 +125,7 @@ A grafikat biztosan le fogom cserélni de egyelőre egy [tutorial](https://www.y
 - Elkezdtem egy másik pálya megrajzolását is.
 
 - Tervezem majd a dolgozatomba beleírni az összes metódust amit unity-n belül használok, mint pl. a collider-eket stb.
+
+## október 10.
+
+- Megcsináltam a jól működő fireRing és PlayerShoot függvényt, első rajzolós funkció kész. 2 To go
