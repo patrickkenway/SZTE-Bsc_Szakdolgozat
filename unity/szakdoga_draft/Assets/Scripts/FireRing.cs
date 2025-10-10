@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireRing : MonoBehaviour
@@ -5,34 +6,31 @@ public class FireRing : MonoBehaviour
     private Vector3 target;
     private float projectileMoveSpeed;
     public int projectileDamage = 1;
-
+    //private float stayTime;
     private bool reachedTarget = false;
-    private float stayTime = 500f; // Mennyi ideig maradjon ott
-    private float stayTimer;
 
+    void Start()
+    {
+        Destroy(gameObject, 10f);
+    }
     private void Update()
     {
-        if (!reachedTarget)
-        {
-            Vector3 moveDirNormalized = (target - transform.position).normalized;
-            transform.position += moveDirNormalized * projectileMoveSpeed * Time.deltaTime;
+        Vector3 moveDirNormalized = (target - transform.position).normalized;
+        transform.position += moveDirNormalized * projectileMoveSpeed * Time.deltaTime;
+        transform.Rotate(0, 0, 300 * Time.deltaTime); // Rotate around Z axis
 
-            // Ha elérte a célt (kis távolságon belül)
-            if (Vector3.Distance(transform.position, target) < 0.1f)
-            {
-                reachedTarget = true;
-                stayTimer = stayTime;
-            }
-        }
-        else
+        if (!reachedTarget && Vector3.Distance(transform.position, target) < 0.1f)
         {
-            // Ott marad egy ideig
-            stayTimer -= Time.deltaTime;
-            if (stayTimer <= 0f)
-            {
-                //Destroy(gameObject);
-            }
+            reachedTarget = true;
+            // Optionally, you can add logic here to make the projectile stay for a while before disappearing
         }
+        if (reachedTarget)
+        {
+            // Logic for when the projectile has reached its target, if needed
+            transform.position = target; // Ensure it stays at the target position
+            Destroy(gameObject, 0.5f); // Destroy the projectile after reaching the target
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,10 +42,10 @@ public class FireRing : MonoBehaviour
         }
 
     }
-    public void InitializeProjectile(Vector3 target, float projectileMoveSpeed)
+    public void InitializeProjectile(Vector2 target, float projectileMoveSpeed)
     {
         this.target = target;
         this.projectileMoveSpeed = projectileMoveSpeed;
-
+        //this.stayTime = staytime; // Például 2 másodpercig marad ott
     }
 }

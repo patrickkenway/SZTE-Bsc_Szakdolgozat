@@ -11,6 +11,7 @@ public class PlayerShoot : MonoBehaviour
     private float lifeTimeTimer;
     // Update is called once per frame
 
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -34,7 +35,9 @@ public class PlayerShoot : MonoBehaviour
 
         fireRing.InitializeProjectile(mousePosition, fireRingSpeed);
         fireRing.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground"; // Set the sorting layer to "Foreground" azért hogy ne menjen be a sprite a falak mögé
-        fireRing.GetComponent<SpriteRenderer>().sortingOrder = 10; // Magas szam legyen hogy mindig elöl legyen
+        fireRing.GetComponent<SpriteRenderer>().sortingOrder = 6; // Magas szam legyen hogy mindig elöl legyen
+
+
 
     }
 }
