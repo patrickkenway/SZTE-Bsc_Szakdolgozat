@@ -6,11 +6,6 @@ public class PlayerShoot : MonoBehaviour
 {
     public GameObject fireRingPrefab;
     public float fireRingSpeed = 1.5f;
-    private float timeToDestroy = 500;
-
-    private float lifeTimeTimer;
-    // Update is called once per frame
-
 
     void Update()
     {

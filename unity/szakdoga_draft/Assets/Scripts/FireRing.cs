@@ -6,7 +6,7 @@ public class FireRing : MonoBehaviour
     private Vector3 target;
     private float projectileMoveSpeed;
     public int projectileDamage = 1;
-    //private float stayTime;
+    private float stayTime = 2f; // Például 2 másodpercig marad ott
     private bool reachedTarget = false;
 
     void Start()
@@ -28,7 +28,7 @@ public class FireRing : MonoBehaviour
         {
             // Logic for when the projectile has reached its target, if needed
             transform.position = target; // Ensure it stays at the target position
-            Destroy(gameObject, 0.5f); // Destroy the projectile after reaching the target
+            Destroy(gameObject, stayTime); // Destroy the projectile after reaching the target
         }
 
     }

@@ -168,5 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fb146fbb803d8428e67e1db66d1728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRingPrefab: {fileID: 5310417616594735419, guid: 9ea9e00e1ba94a547923d3efe467ca1b, type: 3}
-  projectileDamage: 1
+  projectileDamage: 5
