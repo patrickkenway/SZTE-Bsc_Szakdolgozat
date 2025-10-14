@@ -42,6 +42,21 @@ public class FireRing : MonoBehaviour
         }
 
     }
+    private float damageCooldown = 1f;
+    private float lastDamageTime = -1f;
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy)
+        {
+            if (Time.time - lastDamageTime >= damageCooldown)
+            {
+                enemy.TakeDamage(enemy.damage);
+                lastDamageTime = Time.time;
+            }
+        }
+    }
     public void InitializeProjectile(Vector2 target, float projectileMoveSpeed)
     {
         this.target = target;

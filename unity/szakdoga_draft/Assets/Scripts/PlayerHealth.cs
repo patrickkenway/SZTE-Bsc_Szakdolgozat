@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     private int maxHealth = 5;
-    public int currentHealth;
+    private int currentHealth;
     public HealthUI healthUI;
 
     private SpriteRenderer spriteRenderer;
@@ -28,6 +28,23 @@ public class PlayerHealth : MonoBehaviour
         if (enemy)
         {
             TakeDamage(enemy.damage);
+
+        }
+    }
+
+    private float damageCooldown = 1f;
+    private float lastDamageTime = -1f;
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy)
+        {
+            if (Time.time - lastDamageTime >= damageCooldown)
+            {
+                TakeDamage(enemy.damage);
+                lastDamageTime = Time.time;
+            }
         }
     }
 

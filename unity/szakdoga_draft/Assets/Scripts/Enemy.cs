@@ -58,15 +58,15 @@ public class Enemy : MonoBehaviour
             //if ground
             RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 2f, groundLayer);
             //if gap
-            RaycastHit2D gapAhead = Physics2D.Raycast(transform.position+new Vector3(direction,0,0),Vector2.down, 2f, groundLayer);
+            RaycastHit2D gapAhead = Physics2D.Raycast(transform.position + new Vector3(direction, 0, 0), Vector2.down, 2f, groundLayer);
             //if platform
             RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, groundLayer);
 
-            if(!groundInFront.collider && !gapAhead.collider)
+            if (!groundInFront.collider && !gapAhead.collider)
             {
                 shouldJump = true;
             }
-            else if(isPlayerAbove && platformAbove.collider)
+            else if (isPlayerAbove && platformAbove.collider)
             {
                 shouldJump = true;
             }
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= dmg;
         StartCoroutine(FlashWhite());
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -106,14 +106,14 @@ public class Enemy : MonoBehaviour
     {
         //Go around lootable
         //Spawn item
-        foreach(LootItem lootItem in lootTable)
+        foreach (LootItem lootItem in lootTable)
         {
-            if(Random.Range(0f,100f) <= lootItem.dropChance)
+            if (Random.Range(0f, 100f) <= lootItem.dropChance)
             {
                 InstantiateLoot(lootItem.itemPrefab);
                 break;
             }
-            
+
         }
 
         Destroy(gameObject);
@@ -121,7 +121,7 @@ public class Enemy : MonoBehaviour
 
     void InstantiateLoot(GameObject loot)
     {
-        if(loot)
+        if (loot)
         {
             GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
             spawnedLoot.Add(droppedLoot);
@@ -131,9 +131,9 @@ public class Enemy : MonoBehaviour
     }
     private void KillItems()
     {
-           foreach(GameObject tmp in spawnedLoot)
-           {
-                Destroy(tmp);
-           }
+        foreach (GameObject tmp in spawnedLoot)
+        {
+            Destroy(tmp);
+        }
     }
 }
