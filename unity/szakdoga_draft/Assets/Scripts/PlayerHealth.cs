@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
+    private int maxHealth = 5;
     public int currentHealth;
     public HealthUI healthUI;
 
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         GameController.OnReset += ResetHealth;
         HealthItem.OnHealthCollect += Heal;
-       
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
     void Heal(int amount)
     {
         currentHealth += amount;
-        if(currentHealth > maxHealth)
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
