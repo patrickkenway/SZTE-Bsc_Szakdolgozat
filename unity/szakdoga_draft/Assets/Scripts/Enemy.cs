@@ -117,7 +117,6 @@ public class Enemy : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
     void InstantiateLoot(GameObject loot)
     {
         if (loot)
