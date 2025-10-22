@@ -9,6 +9,7 @@ public class FireRing : MonoBehaviour
     private float stayTime = 2f; // Például 2 másodpercig marad ott
     private bool reachedTarget = false;
 
+
     void Start()
     {
         Destroy(gameObject, 10f);
