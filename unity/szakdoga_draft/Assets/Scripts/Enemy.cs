@@ -126,7 +126,7 @@ public class Enemy : MonoBehaviour
             GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
             spawnedLoot.Add(droppedLoot);
 
-            droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
+            droppedLoot.GetComponent<SpriteRenderer>().color = Color.darkRed;
         }
     }
     private void KillItems()
