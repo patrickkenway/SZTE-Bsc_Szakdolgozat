@@ -27,13 +27,17 @@ public class PlayerHealth : MonoBehaviour
         Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy)
         {
-            TakeDamage(enemy.damage);
+            if (Time.time - lastDamageTime >= damageCooldown)
+            {
+                TakeDamage(enemy.damage);
+                lastDamageTime = Time.time;
+            }
 
         }
     }
 
-    private float damageCooldown = 1f;
-    private float lastDamageTime = -1f;
+    private float damageCooldown = 0.8f;
+    private float lastDamageTime = -0.8f;
 
     private void OnTriggerStay2D(Collider2D collision)
     {

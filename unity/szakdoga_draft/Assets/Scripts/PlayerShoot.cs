@@ -20,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
     {
 
         //Get mouse pos
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
         //direction from us to mouse
