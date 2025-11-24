@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public static event Action OnPlayerDied;
 
+    private float damageCooldown = 0.8f;
+    private float lastDamageTime = -0.8f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,9 +38,6 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
-
-    private float damageCooldown = 0.8f;
-    private float lastDamageTime = -0.8f;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
