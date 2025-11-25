@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         survivedLevelsCount = 0;
-        LoadLevel(0,false);
+        LoadLevel(0, false);
         OnReset.Invoke();
         Time.timeScale = 1;
     }
@@ -55,10 +55,12 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
-    void IncreaseProgressAmount(int amount) {
+    void IncreaseProgressAmount(int amount)
+    {
         progressAmount += amount;
         progressSlider.value = progressAmount;
-        if (progressAmount >= 100) {
+        if (progressAmount >= 100)
+        {
             //Level complete!
             LoadCanvas.SetActive(true);
             Debug.Log("Level Complete");
@@ -76,12 +78,12 @@ public class GameController : MonoBehaviour
         currentLevelIndex = level;
         progressAmount = 0;
         progressSlider.value = 0;
-        if(wantSurvivedIncrease) survivedLevelsCount++;
+        if (wantSurvivedIncrease) survivedLevelsCount++;
         LevelChange.Invoke();
     }
     void LoadNextLevel()
     {
         int nextLevelIndex = (currentLevelIndex == levels.Count - 1) ? 0 : currentLevelIndex + 1;
-        LoadLevel(nextLevelIndex,true);
+        LoadLevel(nextLevelIndex, true);
     }
 }
