@@ -1,10 +1,15 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerDraws : MonoBehaviour
 {
     [SerializeField] private DrawingRecognition drawingRecognition; // reference to the DrawingRecognition script
     public Character match; // For storing the match
     private PlayerShoot playerShoot; // Reference to PlayerShoot script
+    public static event Action StarDrawn;
+
 
     private void CheckDrawRecControls()
     {
@@ -19,8 +24,8 @@ public class PlayerDraws : MonoBehaviour
                     playerShoot = GetComponent<PlayerShoot>();
                     playerShoot.Shoot();
                     break;
-                case "square":
-                    Debug.Log("Square drawn!");
+                case "star":
+                    if (GameController.progressAmount >= 100) { StarDrawn.Invoke(); } else { Debug.Log("„You do not have enough point to progress!” "); }
                     break;
                 case "triangle":
                     Debug.Log("Triangle drawn!");

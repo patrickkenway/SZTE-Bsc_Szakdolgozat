@@ -4,9 +4,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class HoldToLoadLevel : MonoBehaviour
-
-    
-
 {
     public float holdDuration = 1f;
     public Image fillCricle;
@@ -20,22 +17,26 @@ public class HoldToLoadLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHolding) 
+        if (isHolding)
         {
             holdTimer += Time.deltaTime;
             fillCricle.fillAmount = holdTimer / holdDuration;
-            if (holdTimer >= holdDuration) {
+            if (holdTimer >= holdDuration)
+            {
                 //load level
                 OnHoldComplete.Invoke();
                 ResetHold();
             }
-        } 
+        }
     }
 
-    public void OnHold(InputAction.CallbackContext context) {
-        if (context.started) {
+    public void OnHold(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
             isHolding = true;
-        } else if(context.canceled)
+        }
+        else if (context.canceled)
         {
             //reset holding
             ResetHold();

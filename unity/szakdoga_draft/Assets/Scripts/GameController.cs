@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    int progressAmount;
+    public static int progressAmount;
     public Slider progressSlider;
 
     public GameObject player;
@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
         progressSlider.value = 0;
         Gem.OnGemCollect += IncreaseProgressAmount;
         HoldToLoadLevel.OnHoldComplete += LoadNextLevel;
+        PlayerDraws.StarDrawn += LoadNextLevel;
         PlayerHealth.OnPlayerDied += GameOverScreen;
         LoadCanvas.SetActive(false);
         gameOverScreen.SetActive(false);
@@ -66,6 +67,13 @@ public class GameController : MonoBehaviour
             Debug.Log("Level Complete");
         }
     }
+
+    public int getProgressAmount()
+    {
+        return progressAmount;
+    }
+
+
     void LoadLevel(int level, bool wantSurvivedIncrease)
     {
         LoadCanvas.SetActive(false);
