@@ -4,7 +4,7 @@ public class PlayerDraws : MonoBehaviour
 {
     [SerializeField] private DrawingRecognition drawingRecognition; // reference to the DrawingRecognition script
     public Character match; // For storing the match
-    [SerializeField] private PlayerShoot playerShoot; // Reference to PlayerShoot script
+    private PlayerShoot playerShoot; // Reference to PlayerShoot script
 
     private void CheckDrawRecControls()
     {

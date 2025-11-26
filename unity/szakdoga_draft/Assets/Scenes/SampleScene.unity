@@ -1281,7 +1281,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2, y: 10.93, z: -10}
+  m_LocalPosition: {x: 5.021, y: 11.006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38579,7 +38579,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.004288912, y: -0.37182963}
+  m_Offset: {x: -0.004288912, y: -0.36845028}
   m_SpriteTilingProperty:
     border: {x: 0.375, y: 0, z: 0.5625, w: 0.625}
     pivot: {x: 0.5, y: 0.5}
@@ -38589,7 +38589,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8139322, y: 1.179816}
+  m_Size: {x: 0.8139322, y: 1.1730573}
   m_EdgeRadius: 0
 --- !u!50 &1262850352
 Rigidbody2D:
@@ -38685,7 +38685,7 @@ Transform:
   m_GameObject: {fileID: 1262850348}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2, y: 10.93, z: 0}
+  m_LocalPosition: {x: 5.021, y: 11.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -38805,7 +38805,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawingRecognition: {fileID: 1698692598}
-  playerShoot: {fileID: 0}
 --- !u!4 &1288791413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4509184340553826778, guid: aec8b65d711cbc846bfc5889192a444b, type: 3}
@@ -44510,7 +44509,7 @@ Transform:
   m_GameObject: {fileID: 1966481626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -0.969, z: 0}
+  m_LocalPosition: {x: -0.09, y: -0.957, z: 0}
   m_LocalScale: {x: 2.38125, y: 2.38125, z: 2.38125}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -44675,7 +44674,7 @@ Transform:
   m_GameObject: {fileID: 2102408202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2, y: 10.93, z: -10}
+  m_LocalPosition: {x: 5.021, y: 11.006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44851,29 +44850,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 368143606137873708, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 569987223660092596, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 569987223660092596, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
       propertyPath: jumpForce
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 569987223660092596, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 569987223660092596, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
       propertyPath: chaseSpeed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1122759360362556665, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.54
+      value: -15.21
       objectReference: {fileID: 0}
     - target: {fileID: 1122759360362556665, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.73
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 1122759360362556665, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
       propertyPath: m_LocalPosition.z
