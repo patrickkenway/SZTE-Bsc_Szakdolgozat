@@ -44850,6 +44850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 368143606137873708, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 569987223660092596, guid: f5cbdbb4cd74c3a4881835efda888669, type: 3}
       propertyPath: jumpForce
       value: 3
@@ -44918,6 +44922,10 @@ PrefabInstance:
     - target: {fileID: 200363110676565587, guid: 15d3b846446bdeb48b08765447c6db31, type: 3}
       propertyPath: m_Name
       value: HealthItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 200363110676565587, guid: 15d3b846446bdeb48b08765447c6db31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7986986856042079880, guid: 15d3b846446bdeb48b08765447c6db31, type: 3}
       propertyPath: m_LocalPosition.x
