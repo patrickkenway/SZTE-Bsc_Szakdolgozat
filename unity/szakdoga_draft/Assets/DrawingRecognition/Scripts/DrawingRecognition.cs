@@ -290,7 +290,7 @@ public class DrawingRecognition : MonoBehaviour
         currentLib = libraryList[0]; // Set to Exam by default
 
         SetWeights(1.0, 1.0, 1.0, 1.0);
-        SetPrecision(3);
+        SetPrecision(2);
     }
 
     // EXAMPLE METHOD TO MODIFY FOR CUSTOM LIBRARY SETUP
