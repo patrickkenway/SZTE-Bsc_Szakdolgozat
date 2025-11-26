@@ -13,10 +13,21 @@ public class PlayerDraws : MonoBehaviour
         {
             match = drawingRecognition.GetMatch(); // Stores match & prints name to debug console 
 
-            if (match.name == "circle")
+            switch (match.name)
             {
-                playerShoot = GetComponent<PlayerShoot>();
-                playerShoot.Shoot();
+                case "circle":
+                    playerShoot = GetComponent<PlayerShoot>();
+                    playerShoot.Shoot();
+                    break;
+                case "square":
+                    Debug.Log("Square drawn!");
+                    break;
+                case "triangle":
+                    Debug.Log("Triangle drawn!");
+                    break;
+                default:
+                    Debug.Log("No match found.");
+                    break;
             }
             drawingRecognition.ClearDrawing();
         }
