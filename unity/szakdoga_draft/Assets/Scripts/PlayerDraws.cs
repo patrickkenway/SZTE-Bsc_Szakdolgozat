@@ -25,9 +25,6 @@ public class PlayerDraws : MonoBehaviour
                 case "triangle":
                     Debug.Log("Triangle drawn!");
                     break;
-                default:
-                    Debug.Log("No match found.");
-                    break;
             }
             drawingRecognition.ClearDrawing();
         }

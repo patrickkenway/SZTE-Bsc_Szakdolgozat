@@ -283,14 +283,13 @@ public class DrawingRecognition : MonoBehaviour
         libraryList.Add(examLib);
         libraryList.Add(symbolLib);
         libraryList.Add(new CharacterLibrary("Sajat")); // Custom libs are empty by default, no need to initialize libs to them
-        libraryList.Add(new CharacterLibrary("Custom Library 2"));
-        libraryList.Add(new CharacterLibrary("Custom Library 3"));
+
 
 
         currentLib = libraryList[0]; // Set to Exam by default
 
         SetWeights(1.0, 1.0, 1.0, 1.0);
-        SetPrecision(2);
+        SetPrecision(4);
     }
 
     // EXAMPLE METHOD TO MODIFY FOR CUSTOM LIBRARY SETUP
